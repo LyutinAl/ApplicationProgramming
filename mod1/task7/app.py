@@ -11,7 +11,7 @@ def counter():
     visit_counter += 1
     return f'{visit_counter}'
 
-# Run this script as: `python .\app.py --port=5555` by using argparse
+# Run this script as: `python .\get_mean_size.py --port=5555` by using argparse
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Запуск Flask приложения')
     parser.add_argument('--port', type=int, default=5000, help='Порт для запуска Flask приложения')
