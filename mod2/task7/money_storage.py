@@ -11,7 +11,7 @@ storage = {}
 def add_transaction(date, number):
     date = datetime.strptime(date, '%Y%m%d')
     storage.setdefault(date.year, {}).setdefault(date.month, 0)
-    storage[date.year][date.month] += number
+    storage[date.year][date.month] += abs(number)
     return f'За период {date.month}/{date.year} добавлена транзакция на сумму {number}'
 
 
@@ -28,6 +28,7 @@ def calculate(year, month):
         return f'За период {period} не было совершено трат'
 
     return f'За период {period} траты составили {expenses}'
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Запуск Flask приложения')

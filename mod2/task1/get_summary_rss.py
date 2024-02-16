@@ -13,6 +13,7 @@ def human_readable_size(size_bytes, precision=2):
     s = round(size_bytes / p, precision)  # Результат с точность 2 знака после запятой
     return f'{s} {SIZE_NAMES[i]}'
 
+
 def get_summary_rss(path: os.path, precision=2) -> str:
     """Возвращает суммарный объем потребляемой памяти процессами в человекочитаемом формате."""
     with open(path, 'r') as file:
